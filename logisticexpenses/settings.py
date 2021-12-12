@@ -42,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'logisticapp.middleware.AuditMiddleware'
 ]
 
 ROOT_URLCONF = 'logisticexpenses.urls'

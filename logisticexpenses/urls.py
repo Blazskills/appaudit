@@ -7,6 +7,6 @@ urlpatterns = [
     # path('auth/', include('authentication.urls')),
     
     #  path('auth/', include('authentication.urls')),
-     path('logistic/', include('logisticapp.urls')),
+     path('', include('logisticapp.urls')),
 
 ]

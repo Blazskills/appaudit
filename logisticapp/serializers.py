@@ -1,6 +1,6 @@
 from django.db.models import fields
 from rest_framework import serializers
-from .models import RequestHeader
+from .models import AuditLog, RequestHeader
 
 
 class LogisticExpensesSerializer(serializers.ModelSerializer):
@@ -12,11 +12,18 @@ class LogisticExpensesSerializer(serializers.ModelSerializer):
         model = RequestHeader
         fields = ['requestheader_id', 'request_header_creator',
                   'requestheader_name', 'department_header_onwer']
-
-
-    
-    
+ 
     
     def create(self, validated_data):
         return RequestHeader.objects.create(**validated_data)
 
+
+
+class AuditDataLog(serializers.ModelSerializer):
+    # product_quantity = serializers.IntegerField(required=False, default=1)
+
+    class Meta:
+        model = AuditLog
+        fields ='__all__'
+ 
+    
